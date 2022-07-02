@@ -60,6 +60,42 @@ def add(matrix, row, column, value):
 
 def winnerO(matrix):
     if matrix[0][0] == 1 and matrix[0][1] == 1 and matrix[0][2] == 1:
+        return True
+    if matrix[1][0] == 1 and matrix[1][1] == 1 and matrix[1][2] == 1:
+        return True
+    if matrix[2][0] == 1 and matrix[2][1] == 1 and matrix[2][2] == 1:
+        return True
+    if matrix[0][0] == 1 and matrix[1][0] == 1 and matrix[2][0] == 1:
+        return True
+    if matrix[0][1] == 1 and matrix[1][1] == 1 and matrix[2][1] == 1:
+        return True
+    if matrix[0][2] == 1 and matrix[1][2] == 1 and matrix[2][2] == 1:
+        return True
+    if matrix[0][0] == 1 and matrix[1][1] == 1 and matrix[2][2] == 1:
+        return True
+    if matrix[0][2] == 1 and matrix[1][1] == 1 and matrix[2][0] == 1:
+        return True
+
+def winnerX(matrix):
+    if matrix[0][0] == 2 and matrix[0][1] == 2 and matrix[0][2] == 2:
+        return True
+    if matrix[1][0] == 2 and matrix[1][1] == 2 and matrix[1][2] == 2:
+        return True
+    if matrix[2][0] == 2 and matrix[2][1] == 2 and matrix[2][2] == 2:
+        return True
+    if matrix[0][0] == 2 and matrix[1][0] == 2 and matrix[2][0] == 2:
+        return True
+    if matrix[0][1] == 2 and matrix[1][1] == 2 and matrix[2][1] == 2:
+        return True
+    if matrix[0][2] == 2 and matrix[1][2] == 2 and matrix[2][2] == 2:
+        return True
+    if matrix[0][0] == 2 and matrix[1][1] == 2 and matrix[2][2] == 2:
+        return True
+    if matrix[0][2] == 2 and matrix[1][1] == 2 and matrix[2][0] == 2:
+        return True
+
+def drawO(matrix):
+    if matrix[0][0] == 1 and matrix[0][1] == 1 and matrix[0][2] == 1:
         turt.backward(200)
         turt.left(90)
         turt.forward(30)
@@ -135,7 +171,7 @@ def winnerO(matrix):
         start(turt)
         return True
 
-def winnerX(matrix):
+def drawX(matrix):
     if matrix[0][0] == 2 and matrix[0][1] == 2 and matrix[0][2] == 2:
         turt.backward(200)
         turt.left(90)
@@ -261,13 +297,6 @@ roundsOs = 0
 roundsXs = 0
 rounds = 0
 
-playerO = [[0, 0, 0],
-           [0, 0, 0],
-           [0, 0, 0]]
-
-playerX = [[0, 0, 0],
-           [0, 0, 0],
-           [0, 0, 0]]
 
 while rounds < 9 and not winnerO(matrix) and not winnerX(matrix):
 
