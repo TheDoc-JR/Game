@@ -58,6 +58,167 @@ def add(matrix, row, column, value):
     matrix[row][column] = value
     return matrix
 
+def winnerO(matrix):
+    if matrix[0][0] == 1 and matrix[0][1] == 1 and matrix[0][2] == 1:
+        turt.backward(200)
+        turt.left(90)
+        turt.forward(30)
+        turt.right(90)
+        turt.pendown()
+        turt.forward(400)
+        start(turt)
+        return True
+    if matrix[1][0] == 1 and matrix[1][1] == 1 and matrix[1][2] == 1:
+        turt.backward(200)
+        turt.right(90)
+        turt.forward(100)
+        turt.left(90)
+        turt.pendown()
+        turt.forward(400)
+        start(turt)
+        return True
+    if matrix[2][0] == 1 and matrix[2][1] == 1 and matrix[2][2] == 1:
+        turt.backward(200)
+        turt.right(90)
+        turt.forward(225)
+        turt.left(90)
+        turt.pendown()
+        turt.forward(400)
+        start(turt)
+        return True
+    if matrix[0][0] == 1 and matrix[1][0] == 1 and matrix[2][0] == 1:
+        turt.left(90)
+        turt.forward(120)
+        turt.left(90)
+        turt.forward(130)
+        turt.left(90)
+        turt.pendown()
+        turt.forward(420)
+        start(turt)
+        return True
+    if matrix[0][1] == 1 and matrix[1][1] == 1 and matrix[2][1] == 1:
+        turt.left(90)
+        turt.forward(120)
+        turt.left(180)
+        turt.pendown()
+        turt.forward(420)
+        start(turt)
+        return True
+    if matrix[0][2] == 1 and matrix[1][2] == 1 and matrix[2][2] == 1:
+        turt.left(90)
+        turt.forward(120)
+        turt.right(90)
+        turt.forward(130)
+        turt.right(90)
+        turt.pendown()
+        turt.forward(420)
+        start(turt)
+        return True
+    if matrix[0][0] == 1 and matrix[1][1] == 1 and matrix[2][2] == 1:
+        turt.left(90)
+        turt.forward(100)
+        turt.left(90)
+        turt.forward(200)
+        turt.left(135)
+        turt.pendown()
+        turt.forward(555)
+        start(turt)
+        return True
+    if matrix[0][2] == 1 and matrix[1][1] == 1 and matrix[0][0] == 1:
+        turt.left(90)
+        turt.forward(100)
+        turt.right(90)
+        turt.forward(190)
+        turt.right(135)
+        turt.pendown()
+        turt.forward(555)
+        start(turt)
+        return True
+
+def winnerX(matrix):
+    if matrix[0][0] == 2 and matrix[0][1] == 2 and matrix[0][2] == 2:
+        turt.backward(200)
+        turt.left(90)
+        turt.forward(30)
+        turt.right(90)
+        turt.pendown()
+        turt.forward(400)
+        start(turt)
+        return True
+    if matrix[1][0] == 2 and matrix[1][1] == 2 and matrix[1][2] == 2:
+        turt.backward(200)
+        turt.right(90)
+        turt.forward(100)
+        turt.left(90)
+        turt.pendown()
+        turt.forward(400)
+        start(turt)
+        return True
+    if matrix[2][0] == 2 and matrix[2][1] == 2 and matrix[2][2] == 2:
+        turt.backward(200)
+        turt.right(90)
+        turt.forward(225)
+        turt.left(90)
+        turt.pendown()
+        turt.forward(400)
+        start(turt)
+        return True
+    if matrix[0][0] == 2 and matrix[1][0] == 2 and matrix[2][0] == 2:
+        turt.left(90)
+        turt.forward(120)
+        turt.left(90)
+        turt.forward(130)
+        turt.left(90)
+        turt.pendown()
+        turt.forward(420)
+        start(turt)
+        return True
+    if matrix[0][1] == 2 and matrix[1][1] == 2 and matrix[2][1] == 2:
+        turt.left(90)
+        turt.forward(120)
+        turt.left(180)
+        turt.pendown()
+        turt.forward(420)
+        start(turt)
+        return True
+    if matrix[0][2] == 2 and matrix[1][2] == 2 and matrix[2][2] == 2:
+        turt.left(90)
+        turt.forward(120)
+        turt.right(90)
+        turt.forward(130)
+        turt.right(90)
+        turt.pendown()
+        turt.forward(420)
+        start(turt)
+        return True
+    if matrix[0][0] == 2 and matrix[1][1] == 2 and matrix[2][2] == 2:
+        turt.left(90)
+        turt.forward(100)
+        turt.left(90)
+        turt.forward(200)
+        turt.left(135)
+        turt.pendown()
+        turt.forward(555)
+        start(turt)
+        return True
+    if matrix[0][2] == 2 and matrix[1][1] == 2 and matrix[0][0] == 2:
+        turt.left(90)
+        turt.forward(100)
+        turt.right(90)
+        turt.forward(190)
+        turt.right(135)
+        turt.pendown()
+        turt.forward(555)
+        start(turt)
+        return True
+
+
+
+
+
+
+
+
 
 turt.penup()
 turt.forward(30)
@@ -107,7 +268,7 @@ playerX = [[0, 0, 0],
            [0, 0, 0],
            [0, 0, 0]]
 
-while rounds < 9:
+while rounds < 9 and not (winnerO(matrix) and winnerX(matrix)):
     optionO = input('Please select an option to draw your O: ')
     while optionO not in '123456789':
         print(optionO + ' is not a valid option')
@@ -123,6 +284,7 @@ while rounds < 9:
                 os(turt)
                 start(turt)
                 add(matrix, 0, 0, 1)
+
     if optionO == '2':
         while check(matrix, optionO):
             print('This place is already taken')
@@ -133,7 +295,8 @@ while rounds < 9:
                 turt.pendown()
                 os(turt)
                 start(turt)
-                add(matrix, 0, 1, 2)
+                add(matrix, 0, 1, 1)
+
     if optionO == '3':
         while check(matrix, optionO):
             print('This place is already taken')
@@ -144,7 +307,8 @@ while rounds < 9:
                 turt.pendown()
                 os(turt)
                 start(turt)
-                add(matrix, 0, 2, 3)
+                add(matrix, 0, 2, 1)
+
     if optionO == '4':
         while check(matrix, optionO):
             print('This place is already taken')
@@ -157,7 +321,8 @@ while rounds < 9:
                 turt.pendown()
                 os(turt)
                 start(turt)
-                add(matrix, 1, 0, 4)
+                add(matrix, 1, 0, 1)
+
     if optionO == '5':
         while check(matrix, optionO):
             print('This place is already taken')
@@ -170,7 +335,8 @@ while rounds < 9:
                 turt.pendown()
                 os(turt)
                 start(turt)
-                add(matrix, 1, 1, 5)
+                add(matrix, 1, 1, 1)
+
     if optionO == '6':
         while check(matrix, optionO):
             print('This place is already taken')
@@ -183,7 +349,8 @@ while rounds < 9:
                 turt.pendown()
                 os(turt)
                 start(turt)
-                add(matrix, 1, 2, 6)
+                add(matrix, 1, 2, 1)
+
     if optionO == '7':
         while check(matrix, optionO):
             print('This place is already taken')
@@ -196,7 +363,8 @@ while rounds < 9:
                 turt.pendown()
                 os(turt)
                 start(turt)
-                add(matrix, 2, 0, 7)
+                add(matrix, 2, 0, 1)
+
     if optionO == '8':
         while check(matrix, optionO):
             print('This place is already taken')
@@ -209,7 +377,8 @@ while rounds < 9:
                 turt.pendown()
                 os(turt)
                 start(turt)
-                add(matrix, 2, 1, 8)
+                add(matrix, 2, 1, 1)
+
     if optionO == '9':
         while check(matrix, optionO):
             print('This place is already taken')
@@ -222,7 +391,8 @@ while rounds < 9:
                 turt.pendown()
                 os(turt)
                 start(turt)
-                add(matrix, 2, 2, 9)
+                add(matrix, 2, 2, 1)
+
 
     if roundsXs < 4:
         optionX = input('Please select an option to draw your X: ')
@@ -239,7 +409,8 @@ while rounds < 9:
                     turt.left(90)
                     exes(turt)
                     start(turt)
-                    add(matrix, 0, 0, 1)
+                    add(matrix, 0, 0, 2)
+
         if optionX == '2':
             while check(matrix, optionX):
                 print('This place is already taken')
@@ -252,6 +423,7 @@ while rounds < 9:
                     exes(turt)
                     start(turt)
                     add(matrix, 0, 1, 2)
+
         if optionX == '3':
             while check(matrix, optionX):
                 print('This place is already taken')
@@ -262,7 +434,8 @@ while rounds < 9:
                     turt.left(90)
                     exes(turt)
                     start(turt)
-                    add(matrix, 0, 2, 3)
+                    add(matrix, 0, 2, 2)
+
         if optionX == '4':
             while check(matrix, optionX):
                 print('This place is already taken')
@@ -274,7 +447,8 @@ while rounds < 9:
                     turt.forward(60)
                     exes(turt)
                     start(turt)
-                    add(matrix, 1, 0, 4)
+                    add(matrix, 1, 0, 2)
+
         if optionX == '5':
             while check(matrix, optionX):
                 print('This place is already taken')
@@ -286,7 +460,8 @@ while rounds < 9:
                     turt.forward(65)
                     exes(turt)
                     start(turt)
-                    add(matrix, 1, 1, 5)
+                    add(matrix, 1, 1, 2)
+
         if optionX == '6':
             while check(matrix, optionX):
                 print('This place is already taken')
@@ -298,7 +473,8 @@ while rounds < 9:
                     turt.forward(65)
                     exes(turt)
                     start(turt)
-                    add(matrix, 1, 2, 6)
+                    add(matrix, 1, 2, 2)
+
         if optionX == '7':
             while check(matrix, optionX):
                 print('This place is already taken')
@@ -310,7 +486,8 @@ while rounds < 9:
                     turt.forward(200)
                     exes(turt)
                     start(turt)
-                    add(matrix, 2, 0, 7)
+                    add(matrix, 2, 0, 2)
+
         if optionX == '8':
             while check(matrix, optionX):
                 print('This place is already taken')
@@ -322,7 +499,8 @@ while rounds < 9:
                     turt.forward(200)
                     exes(turt)
                     start(turt)
-                    add(matrix, 2, 1, 8)
+                    add(matrix, 2, 1, 2)
+
         if optionX == '9':
             while check(matrix, optionX):
                 print('This place is already taken')
@@ -334,13 +512,20 @@ while rounds < 9:
                     turt.forward(200)
                     exes(turt)
                     start(turt)
-                    add(matrix, 2, 2, 9)
+                    add(matrix, 2, 2, 2)
+                    winnerX(matrix)
 
     roundsOs += 1
     roundsXs += 1
-    rounds = roundsOs + roundsXs
-    if rounds == 9:
-        break
+else:
+    if rounds < 9 and winnerO(matrix):
+        print('PLAYER 1 WON')
+
+    elif rounds < 9 and winnerX(matrix):
+        print('PLAYER 2 WON')
+
+    elif rounds == 9 and not (winnerO(matrix) and winnerX(matrix)):
+        print('IT HAS BEEN A TIE!')
 
 print(matrix)
 
