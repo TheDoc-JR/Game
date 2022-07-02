@@ -103,7 +103,7 @@ def drawO(matrix):
         turt.pendown()
         turt.forward(400)
         start(turt)
-        return True
+
     if matrix[1][0] == 1 and matrix[1][1] == 1 and matrix[1][2] == 1:
         turt.backward(200)
         turt.right(90)
@@ -112,7 +112,7 @@ def drawO(matrix):
         turt.pendown()
         turt.forward(400)
         start(turt)
-        return True
+
     if matrix[2][0] == 1 and matrix[2][1] == 1 and matrix[2][2] == 1:
         turt.backward(200)
         turt.right(90)
@@ -121,7 +121,7 @@ def drawO(matrix):
         turt.pendown()
         turt.forward(400)
         start(turt)
-        return True
+
     if matrix[0][0] == 1 and matrix[1][0] == 1 and matrix[2][0] == 1:
         turt.left(90)
         turt.forward(120)
@@ -131,7 +131,7 @@ def drawO(matrix):
         turt.pendown()
         turt.forward(420)
         start(turt)
-        return True
+
     if matrix[0][1] == 1 and matrix[1][1] == 1 and matrix[2][1] == 1:
         turt.left(90)
         turt.forward(120)
@@ -139,7 +139,7 @@ def drawO(matrix):
         turt.pendown()
         turt.forward(420)
         start(turt)
-        return True
+
     if matrix[0][2] == 1 and matrix[1][2] == 1 and matrix[2][2] == 1:
         turt.left(90)
         turt.forward(120)
@@ -149,7 +149,7 @@ def drawO(matrix):
         turt.pendown()
         turt.forward(420)
         start(turt)
-        return True
+
     if matrix[0][0] == 1 and matrix[1][1] == 1 and matrix[2][2] == 1:
         turt.left(90)
         turt.forward(100)
@@ -159,7 +159,7 @@ def drawO(matrix):
         turt.pendown()
         turt.forward(555)
         start(turt)
-        return True
+
     if matrix[0][2] == 1 and matrix[1][1] == 1 and matrix[2][0] == 1:
         turt.left(90)
         turt.forward(100)
@@ -169,7 +169,7 @@ def drawO(matrix):
         turt.pendown()
         turt.forward(555)
         start(turt)
-        return True
+
 
 def drawX(matrix):
     if matrix[0][0] == 2 and matrix[0][1] == 2 and matrix[0][2] == 2:
@@ -180,7 +180,7 @@ def drawX(matrix):
         turt.pendown()
         turt.forward(400)
         start(turt)
-        return True
+
     if matrix[1][0] == 2 and matrix[1][1] == 2 and matrix[1][2] == 2:
         turt.backward(200)
         turt.right(90)
@@ -189,7 +189,7 @@ def drawX(matrix):
         turt.pendown()
         turt.forward(400)
         start(turt)
-        return True
+
     if matrix[2][0] == 2 and matrix[2][1] == 2 and matrix[2][2] == 2:
         turt.backward(200)
         turt.right(90)
@@ -198,7 +198,7 @@ def drawX(matrix):
         turt.pendown()
         turt.forward(400)
         start(turt)
-        return True
+
     if matrix[0][0] == 2 and matrix[1][0] == 2 and matrix[2][0] == 2:
         turt.left(90)
         turt.forward(120)
@@ -208,7 +208,7 @@ def drawX(matrix):
         turt.pendown()
         turt.forward(420)
         start(turt)
-        return True
+
     if matrix[0][1] == 2 and matrix[1][1] == 2 and matrix[2][1] == 2:
         turt.left(90)
         turt.forward(120)
@@ -216,7 +216,7 @@ def drawX(matrix):
         turt.pendown()
         turt.forward(420)
         start(turt)
-        return True
+
     if matrix[0][2] == 2 and matrix[1][2] == 2 and matrix[2][2] == 2:
         turt.left(90)
         turt.forward(120)
@@ -226,7 +226,7 @@ def drawX(matrix):
         turt.pendown()
         turt.forward(420)
         start(turt)
-        return True
+
     if matrix[0][0] == 2 and matrix[1][1] == 2 and matrix[2][2] == 2:
         turt.left(90)
         turt.forward(100)
@@ -236,7 +236,7 @@ def drawX(matrix):
         turt.pendown()
         turt.forward(555)
         start(turt)
-        return True
+
     if matrix[0][2] == 2 and matrix[1][1] == 2 and matrix[2][0] == 2:
         turt.left(90)
         turt.forward(100)
@@ -246,7 +246,7 @@ def drawX(matrix):
         turt.pendown()
         turt.forward(555)
         start(turt)
-        return True
+
 
 
 
@@ -427,6 +427,7 @@ while rounds < 9 and not winnerO(matrix) and not winnerX(matrix):
         roundsOs += 1
     else:
         if winnerO(matrix):
+            drawO(matrix)
             print('PLAYER 1 WON')
             break
 
@@ -553,6 +554,7 @@ while rounds < 9 and not winnerO(matrix) and not winnerX(matrix):
         roundsXs += 1
     else:
         if winnerX(matrix):
+            drawX(matrix)
             print('PLAYER 2 WON')
             break
 
@@ -562,16 +564,14 @@ else:
         print('IT HAS BEEN A TIE!')
 
     elif winnerO(matrix):
+        drawO(matrix)
         print('PLAYER 1 WON')
 
     elif winnerX(matrix):
+        drawX(matrix)
         print('PLAYER 2 WON')
 
 
-
-
-
-print(matrix)
 
 scr.exitonclick()
 
