@@ -124,7 +124,7 @@ def winnerO(matrix):
         turt.forward(555)
         start(turt)
         return True
-    if matrix[0][2] == 1 and matrix[1][1] == 1 and matrix[0][0] == 1:
+    if matrix[0][2] == 1 and matrix[1][1] == 1 and matrix[2][0] == 1:
         turt.left(90)
         turt.forward(100)
         turt.right(90)
@@ -201,7 +201,7 @@ def winnerX(matrix):
         turt.forward(555)
         start(turt)
         return True
-    if matrix[0][2] == 2 and matrix[1][1] == 2 and matrix[0][0] == 2:
+    if matrix[0][2] == 2 and matrix[1][1] == 2 and matrix[2][0] == 2:
         turt.left(90)
         turt.forward(100)
         turt.right(90)
@@ -256,9 +256,10 @@ matrix = [[0, 0, 0],
           [0, 0, 0],
           [0, 0, 0]]
 
-rounds = 0
+
 roundsOs = 0
 roundsXs = 0
+rounds = 0
 
 playerO = [[0, 0, 0],
            [0, 0, 0],
@@ -268,133 +269,139 @@ playerX = [[0, 0, 0],
            [0, 0, 0],
            [0, 0, 0]]
 
-while rounds < 9 and not (winnerO(matrix) and winnerX(matrix)):
-    optionO = input('Please select an option to draw your O: ')
-    while optionO not in '123456789':
-        print(optionO + ' is not a valid option')
+while rounds < 9 and not winnerO(matrix) and not winnerX(matrix):
+
+    if roundsOs < 5 and not winnerO(matrix) and not winnerX(matrix):
         optionO = input('Please select an option to draw your O: ')
-    if optionO == '1':
-        while check(matrix, optionO):
-            print('This place is already taken')
+        while optionO not in '123456789':
+            print(optionO + ' is not a valid option')
             optionO = input('Please select an option to draw your O: ')
-        else:
-            if not check(matrix, optionO) and optionO == '1':
-                turt.backward(150)
-                turt.pendown()
-                os(turt)
-                start(turt)
-                add(matrix, 0, 0, 1)
+        if optionO == '1':
+            while check(matrix, optionO):
+                print('This place is already taken')
+                optionO = input('Please select an option to draw your O: ')
+            else:
+                if not check(matrix, optionO) and optionO == '1':
+                    turt.backward(150)
+                    turt.pendown()
+                    os(turt)
+                    start(turt)
+                    add(matrix, 0, 0, 1)
 
-    if optionO == '2':
-        while check(matrix, optionO):
-            print('This place is already taken')
-            optionO = input('Please select an option to draw your O: ')
-        else:
-            if not check(matrix, optionO) and optionO == '2':
-                turt.backward(5)
-                turt.pendown()
-                os(turt)
-                start(turt)
-                add(matrix, 0, 1, 1)
+        if optionO == '2':
+            while check(matrix, optionO):
+                print('This place is already taken')
+                optionO = input('Please select an option to draw your O: ')
+            else:
+                if not check(matrix, optionO) and optionO == '2':
+                    turt.backward(5)
+                    turt.pendown()
+                    os(turt)
+                    start(turt)
+                    add(matrix, 0, 1, 1)
 
-    if optionO == '3':
-        while check(matrix, optionO):
-            print('This place is already taken')
-            optionO = input('Please select an option to draw your O: ')
-        else:
-            if not check(matrix, optionO) and optionO == '3':
-                turt.forward(135)
-                turt.pendown()
-                os(turt)
-                start(turt)
-                add(matrix, 0, 2, 1)
+        if optionO == '3':
+            while check(matrix, optionO):
+                print('This place is already taken')
+                optionO = input('Please select an option to draw your O: ')
+            else:
+                if not check(matrix, optionO) and optionO == '3':
+                    turt.forward(135)
+                    turt.pendown()
+                    os(turt)
+                    start(turt)
+                    add(matrix, 0, 2, 1)
 
-    if optionO == '4':
-        while check(matrix, optionO):
-            print('This place is already taken')
-            optionO = input('Please select an option to draw your O: ')
-        else:
-            if not check(matrix, optionO) and optionO == '4':
-                turt.backward(190)
-                turt.right(90)
-                turt.forward(95)
-                turt.pendown()
-                os(turt)
-                start(turt)
-                add(matrix, 1, 0, 1)
+        if optionO == '4':
+            while check(matrix, optionO):
+                print('This place is already taken')
+                optionO = input('Please select an option to draw your O: ')
+            else:
+                if not check(matrix, optionO) and optionO == '4':
+                    turt.backward(190)
+                    turt.right(90)
+                    turt.forward(95)
+                    turt.pendown()
+                    os(turt)
+                    start(turt)
+                    add(matrix, 1, 0, 1)
 
-    if optionO == '5':
-        while check(matrix, optionO):
-            print('This place is already taken')
-            optionO = input('Please select an option to draw your O: ')
-        else:
-            if not check(matrix, optionO) and optionO == '5':
-                turt.backward(55)
-                turt.right(90)
-                turt.forward(95)
-                turt.pendown()
-                os(turt)
-                start(turt)
-                add(matrix, 1, 1, 1)
+        if optionO == '5':
+            while check(matrix, optionO):
+                print('This place is already taken')
+                optionO = input('Please select an option to draw your O: ')
+            else:
+                if not check(matrix, optionO) and optionO == '5':
+                    turt.backward(55)
+                    turt.right(90)
+                    turt.forward(95)
+                    turt.pendown()
+                    os(turt)
+                    start(turt)
+                    add(matrix, 1, 1, 1)
 
-    if optionO == '6':
-        while check(matrix, optionO):
-            print('This place is already taken')
-            optionO = input('Please select an option to draw your O: ')
-        else:
-            if not check(matrix, optionO) and optionO == '6':
-                turt.forward(75)
-                turt.right(90)
-                turt.forward(95)
-                turt.pendown()
-                os(turt)
-                start(turt)
-                add(matrix, 1, 2, 1)
+        if optionO == '6':
+            while check(matrix, optionO):
+                print('This place is already taken')
+                optionO = input('Please select an option to draw your O: ')
+            else:
+                if not check(matrix, optionO) and optionO == '6':
+                    turt.forward(75)
+                    turt.right(90)
+                    turt.forward(95)
+                    turt.pendown()
+                    os(turt)
+                    start(turt)
+                    add(matrix, 1, 2, 1)
 
-    if optionO == '7':
-        while check(matrix, optionO):
-            print('This place is already taken')
-            optionO = input('Please select an option to draw your O: ')
-        else:
-            if not check(matrix, optionO) and optionO == '7':
-                turt.backward(190)
-                turt.right(90)
-                turt.forward(230)
-                turt.pendown()
-                os(turt)
-                start(turt)
-                add(matrix, 2, 0, 1)
+        if optionO == '7':
+            while check(matrix, optionO):
+                print('This place is already taken')
+                optionO = input('Please select an option to draw your O: ')
+            else:
+                if not check(matrix, optionO) and optionO == '7':
+                    turt.backward(190)
+                    turt.right(90)
+                    turt.forward(230)
+                    turt.pendown()
+                    os(turt)
+                    start(turt)
+                    add(matrix, 2, 0, 1)
 
-    if optionO == '8':
-        while check(matrix, optionO):
-            print('This place is already taken')
-            optionO = input('Please select an option to draw your O: ')
-        else:
-            if not check(matrix, optionO) and optionO == '8':
-                turt.backward(55)
-                turt.right(90)
-                turt.forward(230)
-                turt.pendown()
-                os(turt)
-                start(turt)
-                add(matrix, 2, 1, 1)
+        if optionO == '8':
+            while check(matrix, optionO):
+                print('This place is already taken')
+                optionO = input('Please select an option to draw your O: ')
+            else:
+                if not check(matrix, optionO) and optionO == '8':
+                    turt.backward(55)
+                    turt.right(90)
+                    turt.forward(230)
+                    turt.pendown()
+                    os(turt)
+                    start(turt)
+                    add(matrix, 2, 1, 1)
 
-    if optionO == '9':
-        while check(matrix, optionO):
-            print('This place is already taken')
-            optionO = input('Please select an option to draw your O: ')
-        else:
-            if not check(matrix, optionO) and optionO == '9':
-                turt.forward(75)
-                turt.right(90)
-                turt.forward(230)
-                turt.pendown()
-                os(turt)
-                start(turt)
-                add(matrix, 2, 2, 1)
+        if optionO == '9':
+            while check(matrix, optionO):
+                print('This place is already taken')
+                optionO = input('Please select an option to draw your O: ')
+            else:
+                if not check(matrix, optionO) and optionO == '9':
+                    turt.forward(75)
+                    turt.right(90)
+                    turt.forward(230)
+                    turt.pendown()
+                    os(turt)
+                    start(turt)
+                    add(matrix, 2, 2, 1)
+        roundsOs += 1
+    else:
+        if winnerO(matrix):
+            print('PLAYER 1 WON')
+            break
 
-
-    if roundsXs < 4:
+    if roundsXs < 4 and not winnerO(matrix) and not winnerX(matrix):
         optionX = input('Please select an option to draw your X: ')
         while optionX not in '123456789':
             print(optionX + ' is not a valid option')
@@ -513,19 +520,27 @@ while rounds < 9 and not (winnerO(matrix) and winnerX(matrix)):
                     exes(turt)
                     start(turt)
                     add(matrix, 2, 2, 2)
-                    winnerX(matrix)
 
-    roundsOs += 1
-    roundsXs += 1
+        roundsXs += 1
+    else:
+        if winnerX(matrix):
+            print('PLAYER 2 WON')
+            break
+
+    rounds = roundsOs + roundsXs
 else:
-    if rounds < 9 and winnerO(matrix):
+    if rounds == 9:
+        print('IT HAS BEEN A TIE!')
+
+    elif winnerO(matrix):
         print('PLAYER 1 WON')
 
-    elif rounds < 9 and winnerX(matrix):
+    elif winnerX(matrix):
         print('PLAYER 2 WON')
 
-    elif rounds == 9 and not (winnerO(matrix) and winnerX(matrix)):
-        print('IT HAS BEEN A TIE!')
+
+
+
 
 print(matrix)
 
