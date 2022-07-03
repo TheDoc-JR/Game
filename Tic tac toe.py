@@ -248,14 +248,6 @@ def drawX(matrix):
         start(turt)
 
 
-
-
-
-
-
-
-
-
 turt.penup()
 turt.forward(30)
 turt.left(90)
@@ -456,7 +448,6 @@ while rounds < 9 and not winnerO(matrix) and not winnerX(matrix):
                 if not check(matrix, optionX) and optionX == '2':
                     turt.backward(35)
                     turt.left(90)
-                    turt.forward(10)
                     exes(turt)
                     start(turt)
                     add(matrix, 0, 1, 2)
