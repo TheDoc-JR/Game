@@ -290,7 +290,7 @@ roundsOs = 0
 roundsXs = 0
 rounds = 0
 
-print('WELCOME TO THE TIC-TAC-TOE GAME!')
+print('WELCOME TO MY TIC-TAC-TOE GAME!')
 time.sleep(3)
 
 print('PLAYER 1 is going to play with the Os and PLAYER 2 with the Exes')
