@@ -1,4 +1,5 @@
 from turtle import Screen, Turtle
+import time
 
 scr = Screen()
 scr.setup(1000, 1000)
@@ -288,6 +289,15 @@ matrix = [[0, 0, 0],
 roundsOs = 0
 roundsXs = 0
 rounds = 0
+
+print('WELCOME TO THE TIC-TAC-TOE GAME!')
+time.sleep(3)
+
+print('PLAYER 1 is going to play with the Os and PLAYER 2 with the Exes')
+time.sleep(3)
+
+print('PLAYER 1 STARTS!')
+time.sleep(2)
 
 
 while rounds < 9 and not winnerO(matrix) and not winnerX(matrix):
