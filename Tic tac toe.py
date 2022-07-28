@@ -296,7 +296,10 @@ time.sleep(3)
 print('PLAYER 1 is going to play with the Os and PLAYER 2 with the Exes')
 time.sleep(3)
 
-print('PLAYER 1 STARTS!')
+player1 = input('PLAYER 1 please enter your name: ')
+player2 = input('Now your turn PLAYER 2, please enter your name: ')
+
+print(player1 + ' STARTS!')
 time.sleep(2)
 
 
@@ -430,7 +433,7 @@ while rounds < 9 and not winnerO(matrix) and not winnerX(matrix):
     else:
         if winnerO(matrix):
             drawO(matrix)
-            print('PLAYER 1 WON')
+            print(player1 + ' WON!')
             break
 
     if roundsXs < 4 and not winnerO(matrix) and not winnerX(matrix):
@@ -556,7 +559,7 @@ while rounds < 9 and not winnerO(matrix) and not winnerX(matrix):
     else:
         if winnerX(matrix):
             drawX(matrix)
-            print('PLAYER 2 WON')
+            print(player2 + ' WON!')
             break
 
     rounds = roundsOs + roundsXs
@@ -566,11 +569,11 @@ else:
 
     elif winnerO(matrix):
         drawO(matrix)
-        print('PLAYER 1 WON')
+        print(player1 + ' WON!')
 
     elif winnerX(matrix):
         drawX(matrix)
-        print('PLAYER 2 WON')
+        print(player2 + ' WON!')
 
 
 
