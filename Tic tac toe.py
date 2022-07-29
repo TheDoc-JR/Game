@@ -564,7 +564,7 @@ while rounds < 9 and not winnerO(matrix) and not winnerX(matrix):
 
     rounds = roundsOs + roundsXs
 else:
-    if rounds == 9:
+    if rounds == 9 and not winnerO(matrix) and not winnerX(matrix):
         print('IT HAS BEEN A TIE!')
 
     elif winnerO(matrix):
